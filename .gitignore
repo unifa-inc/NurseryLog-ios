@@ -1,0 +1,28 @@
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcarchive
+*.xcworkspace/xcuserdata/
+
+# CocoaPods
+Pods/
+*.xcworkspace
+
+# Build output
+build/
+
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Secrets
+*.xcconfig
+!ExampleConfig.xcconfig

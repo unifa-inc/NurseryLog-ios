@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tln-nav-ctl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tln-nav-sc">
+            <objects>
+                <navigationController id="tln-nav-ctl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tln-nav-bar">
+                        <rect key="frame" x="0.0" y="96" width="414" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tln-vc" kind="relationship" relationship="rootViewController" id="tln-nav-root"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tln-nav-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1113" y="644"/>
+        </scene>
+        <!--タイムライン-->
+        <scene sceneID="tln-sc">
+            <objects>
+                <viewController storyboardIdentifier="TimelineViewController" id="tln-vc" customClass="TimelineViewController" customModule="NurseryLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tln-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tln-sdb" customClass="SelectDateButton" customModule="NurseryLog" customModuleProvider="target">
+                                <rect key="frame" x="16" y="96" width="382" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tln-sdb-h"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tln-tv">
+                                <rect key="frame" x="0.0" y="150" width="414" height="746"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" contentMode="scaleToFill" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tln-ai">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tln-fab" customClass="AddActivityButton" customModule="NurseryLog" customModuleProvider="target">
+                                <rect key="frame" x="334" y="748" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tln-fab-h"/>
+                                    <constraint firstAttribute="width" constant="56" id="tln-fab-w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tln-safe"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tln-sdb" firstAttribute="top" secondItem="tln-safe" secondAttribute="top" constant="12" id="tln-sdb-t"/>
+                            <constraint firstItem="tln-sdb" firstAttribute="leading" secondItem="tln-safe" secondAttribute="leading" constant="16" id="tln-sdb-l"/>
+                            <constraint firstItem="tln-safe" firstAttribute="trailing" secondItem="tln-sdb" secondAttribute="trailing" constant="16" id="tln-sdb-r"/>
+                            <constraint firstItem="tln-tv" firstAttribute="top" secondItem="tln-sdb" secondAttribute="bottom" constant="12" id="tln-c1"/>
+                            <constraint firstItem="tln-safe" firstAttribute="bottom" secondItem="tln-fab" secondAttribute="bottom" constant="24" id="tln-c10"/>
+                            <constraint firstItem="tln-tv" firstAttribute="leading" secondItem="tln-view" secondAttribute="leading" id="tln-c2"/>
+                            <constraint firstItem="tln-tv" firstAttribute="trailing" secondItem="tln-view" secondAttribute="trailing" id="tln-c3"/>
+                            <constraint firstItem="tln-tv" firstAttribute="bottom" secondItem="tln-view" secondAttribute="bottom" id="tln-c4"/>
+                            <constraint firstItem="tln-ai" firstAttribute="centerX" secondItem="tln-view" secondAttribute="centerX" id="tln-c7"/>
+                            <constraint firstItem="tln-ai" firstAttribute="centerY" secondItem="tln-view" secondAttribute="centerY" id="tln-c8"/>
+                            <constraint firstItem="tln-safe" firstAttribute="trailing" secondItem="tln-fab" secondAttribute="trailing" constant="24" id="tln-c9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="タイムライン" id="tln-nav-item"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="tln-ai" id="tln-out-ai"/>
+                        <outlet property="addActivityButton" destination="tln-fab" id="tln-out-fab"/>
+                        <outlet property="selectDateButton" destination="tln-sdb" id="tln-out-sdb"/>
+                        <outlet property="tableView" destination="tln-tv" id="tln-out-tv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tln-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="644"/>
+        </scene>
+    </scenes>
+</document>

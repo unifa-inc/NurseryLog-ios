@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="det-vc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity Detail View Controller-->
+        <scene sceneID="det-sc">
+            <objects>
+                <viewController storyboardIdentifier="ActivityDetailViewController" id="det-vc" customClass="ActivityDetailViewController" customModule="NurseryLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="アクティビティー" id="det-nav-item"/>
+                    <view key="view" contentMode="scaleToFill" id="det-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="det-scroll">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="det-stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="det-adv" customClass="ActivityDetailView" customModule="NurseryLog" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="346"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="det-spacer">
+                                                <rect key="frame" x="0.0" y="346" width="414" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="det-stack" firstAttribute="leading" secondItem="det-scroll" secondAttribute="leading" id="det-sc1"/>
+                                    <constraint firstItem="det-stack" firstAttribute="top" secondItem="det-scroll" secondAttribute="top" id="det-sc2"/>
+                                    <constraint firstAttribute="trailing" secondItem="det-stack" secondAttribute="trailing" id="det-sc3"/>
+                                    <constraint firstAttribute="bottom" secondItem="det-stack" secondAttribute="bottom" id="det-sc4"/>
+                                    <constraint firstItem="det-stack" firstAttribute="width" secondItem="det-scroll" secondAttribute="width" id="det-sc5"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="det-clg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="det-flg"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="det-safe"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="det-safe" firstAttribute="top" secondItem="det-scroll" secondAttribute="top" id="det-c1"/>
+                            <constraint firstItem="det-scroll" firstAttribute="leading" secondItem="det-safe" secondAttribute="leading" id="det-c2"/>
+                            <constraint firstItem="det-safe" firstAttribute="trailing" secondItem="det-scroll" secondAttribute="trailing" id="det-c3"/>
+                            <constraint firstItem="det-safe" firstAttribute="bottom" secondItem="det-scroll" secondAttribute="bottom" id="det-c4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityDetailView" destination="det-adv" id="det-out-adv"/>
+                        <outlet property="scrollView" destination="det-scroll" id="det-out-scroll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="det-fr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

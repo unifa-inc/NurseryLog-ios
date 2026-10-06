@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="add-vc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--アクティビティー-->
+        <scene sceneID="add-sc">
+            <objects>
+                <viewController storyboardIdentifier="AddActivityViewController" id="add-vc" customClass="AddActivityViewController" customModule="NurseryLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="add-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="d27-ja-t84">
+                                <rect key="frame" x="16" y="96" width="382" height="736"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="2" translatesAutoresizingMaskIntoConstraints="NO" id="add-sub">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
+                                        <string key="text">これまでに受けた健診を入力してください。
+受けていない項目は空白にしてください。</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-fM-0c9">
+                                        <rect key="frame" x="0.0" y="73.5" width="382" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jmj-ez-ffm">
+                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="5G7-Mt-PHC">
+                                                <rect key="frame" x="105" y="42" width="150.5" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="752" verticalHuggingPriority="251" text="時間" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-time-sec">
+                                                        <rect key="frame" x="0.0" y="0.0" width="26.5" height="44"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="add-time-box" customClass="TimeDisplayView" customModule="NurseryLog" customModuleProvider="target">
+                                                        <rect key="frame" x="50.5" y="0.0" width="100" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="add-time-h"/>
+                                                            <constraint firstAttribute="width" constant="100" id="add-time-w"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOV-JZ-o7B">
+                                                <rect key="frame" x="265" y="0.0" width="117" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GMw-3s-N47" userLabel="title Stack View">
+                                        <rect key="frame" x="0.0" y="241.5" width="382" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-title-sec">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="add-title-tf" customClass="MDCOutlinedTextField">
+                                                <rect key="frame" x="0.0" y="29" width="382" height="56"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="uQ8-IO-2zB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="add-cat" customClass="CategoryTagsView" customModule="NurseryLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="366.5" width="382" height="70.5"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="438-nz-3i2" userLabel="note Stack View">
+                                        <rect key="frame" x="0.0" y="477" width="382" height="169"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ノート" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-notes-sec">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="add-notes-tv" customClass="MDCOutlinedTextArea">
+                                                <rect key="frame" x="0.0" y="29" width="382" height="140"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="add-ta-h"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="add-save" customClass="PrimaryButton" customModule="NurseryLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="686" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hpg-HS-NbV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="add-safe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d27-ja-t84" firstAttribute="top" secondItem="add-safe" secondAttribute="top" constant="16" id="Cas-3B-eOR"/>
+                            <constraint firstAttribute="trailing" secondItem="d27-ja-t84" secondAttribute="trailing" constant="16" id="hl2-xS-n7q"/>
+                            <constraint firstItem="d27-ja-t84" firstAttribute="leading" secondItem="add-safe" secondAttribute="leading" constant="16" id="jlW-z6-Bqo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="アクティビティー" id="add-nav-item"/>
+                    <connections>
+                        <outlet property="categoryTagsView" destination="add-cat" id="add-out-cat"/>
+                        <outlet property="notesSectionLabel" destination="add-notes-sec" id="add-out-nsec"/>
+                        <outlet property="notesTextArea" destination="add-notes-tv" id="add-out-ntv"/>
+                        <outlet property="saveButton" destination="add-save" id="add-out-save"/>
+                        <outlet property="subtitleLabel" destination="add-sub" id="add-out-sub"/>
+                        <outlet property="timeBoxView" destination="add-time-box" id="add-out-tbox"/>
+                        <outlet property="timeRowStack" destination="BYg-fM-0c9" id="add-out-timerow"/>
+                        <outlet property="timeSectionLabel" destination="add-time-sec" id="add-out-tsec"/>
+                        <outlet property="titleSectionLabel" destination="add-title-sec" id="add-out-ttsec"/>
+                        <outlet property="titleTextField" destination="add-title-tf" id="add-out-ttf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="add-fr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81" y="8"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
